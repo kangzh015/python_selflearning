@@ -1,0 +1,10 @@
+from sklearn.model_selection import train_test_split
+data_tr1,data_te1,target_tr,target_te = train_test_split(media_rfm.iloc[:,3:9],media_rfm['class'],test_size=0.2,random_state=10)
+from sklearn.preprocessing import StandardScaler
+stdScale = StandardScaler().fit(data_tr1) ## 生成规则
+data_tr = stdScale.transform(data_tr1) ## 将规则应用于训练集
+data_te = stdScale.transform(data_te1) ## 将规则应用于测试集
+————————————————
+版权声明：本文为CSDN博主「mx丶姜小辉」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_40304090/article/details/90597892
+
