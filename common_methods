@@ -1,4 +1,4 @@
-分组后先对训练集进行标准化，再将标准化的规则应用在测试集上
+1. 分组后先对训练集进行标准化，再将标准化的规则应用在测试集上
 from sklearn.model_selection import train_test_split
 data_tr1,data_te1,target_tr,target_te = train_test_split(media_rfm.iloc[:,3:9],media_rfm['class'],test_size=0.2,random_state=10)
 from sklearn.preprocessing import StandardScaler
@@ -10,6 +10,7 @@ data_te = stdScale.transform(data_te1) ## 将规则应用于测试集
 原文链接：https://blog.csdn.net/qq_40304090/article/details/90597892
 
 
+2. 
 ROC曲线的代码
 #简单代码 https://www.cnblogs.com/hechangchun/p/9840492.html
 
@@ -149,3 +150,11 @@ plt.ylabel('True Positive Rate')
 plt.title('Receiver operating characteristic example')
 plt.legend(loc="lower right")
 plt.show()
+
+
+3. 
+import numpy as np
+import pandas as pd
+#创建一个Dataframe
+data=pd.DataFrame(np.arange(36).reshape(4,4),index=list('0123456789'),columns=list('ABCD'))
+ 
